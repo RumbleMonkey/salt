@@ -1,4 +1,4 @@
 base:
-    'role:containerized':
+    'roles:containerized':
         - match: grain
         - docker
