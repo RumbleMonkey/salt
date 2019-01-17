@@ -1,8 +1,7 @@
 docker:
     pkgrepo.managed:
         - name: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{salt.cmd.run("lsb_release -cs")}} stable
-        - keyid: 0EBFCD88
-        - keyserver: pgp.mit.edu
+        - gpgkey: salt://data/docker.gpg
 
     pkg.installed:
         - name: docker-ce
