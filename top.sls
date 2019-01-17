@@ -1,3 +1,4 @@
 base:
-    'alpha.habitat.com':
+    'containerized':
+        - match: grain
         - docker
