@@ -6,7 +6,7 @@ pip:
 
 awscli:
     cmd.run:
-        - name: pip install awscli
+        - name: pip install awscli docker
         - require:
             - cmd: pip
         - unless:
