@@ -5,3 +5,10 @@ bounce:
         - user: ubuntu
         - group: ubuntu
         - mode: 755
+
+container_mounts:
+    file.directory:
+        - name: /home/ubuntu/troop/config
+        - user: ubuntu
+        - group: ubuntu
+        - makedirs: true
