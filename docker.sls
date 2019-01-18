@@ -3,6 +3,7 @@ python-dev:
         - pkgs:
             - python3
             - libpython3-dev
+            - python3-distutils
 
 pip:
     cmd.run:
