@@ -3,6 +3,6 @@ base:
         - match: grain
         - docker
 
-    "roles:troop_node":
+    "roles:node":
         - match: grain
-        - troop_node
+        - node
