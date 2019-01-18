@@ -3,6 +3,7 @@
 set -ex
 
 TAG=$1
+ENV=$2
 ENDPOINT=989485622078.dkr.ecr.us-west-2.amazonaws.com
 REPO=rumblemonkey/alpha
 CONTAINER=alpha
@@ -20,6 +21,7 @@ docker stop $CONTAINER || true
 
 docker run -d\
     --rm\
+    -e "NODE_ENV=$ENV"\
     -v${HOME}/troop/config:/home/troop/.config/RumbleMonkey\
     --name $CONTAINER\
     -p7625:7625\
