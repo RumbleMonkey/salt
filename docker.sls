@@ -1,10 +1,8 @@
 python-dev:
     pkg.installed:
         - pkgs:
-            - python
             - python3
             - libpython3-dev
-            - libpython-dev
 
 pip:
     cmd.run:
