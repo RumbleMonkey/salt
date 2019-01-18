@@ -1,3 +1,27 @@
+python-dev:
+    pkg.installed:
+        - pkgs:
+            - python
+            - python3
+            - libpython3-dev
+            - libpython-dev
+
+pip:
+    cmd.run:
+        - name: curl https://bootstrap.pypa.io/get-pip.py | python3.6 -
+        - unless:
+            - which pip3.6
+        - require:
+            - python-dev
+
+awscli:
+    cmd.run:
+        - name: pip3.6 install awscli
+        - require:
+            - cmd: pip
+        - unless:
+            - pip3.6 freeze | grep awscli
+
 docker:
     pkgrepo.managed:
         - name: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{salt.cmd.run("lsb_release -cs")}} stable
