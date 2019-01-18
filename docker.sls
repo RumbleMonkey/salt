@@ -1,25 +1,17 @@
-python-dev:
-    pkg.installed:
-        - pkgs:
-            - python3
-            - libpython3-dev
-            - python3-distutils
-
 pip:
     cmd.run:
-        - name: curl https://bootstrap.pypa.io/get-pip.py | python3.6 -
+        - name: curl https://bootstrap.pypa.io/get-pip.py | python -
         - unless:
-            - which pip3.6
-        - require:
-            - python-dev
+            - which pip
 
 awscli:
     cmd.run:
-        - name: pip3.6 install awscli
+        - name: pip install awscli
         - require:
             - cmd: pip
         - unless:
-            - pip3.6 freeze | grep awscli
+            - pip freeze | grep awscli
+            - pip freeze | grep docker
 
 docker:
     pkgrepo.managed:
