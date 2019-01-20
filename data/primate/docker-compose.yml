@@ -9,6 +9,8 @@ services:
     environment:
       - ENV_PRIMATE=${PRIMATE_ENV}
     image: rumblemonkey/primate:${PRIMATE_TAG}
+    depends_on:
+        - redis
     links:
       - redis
     ports:
@@ -16,6 +18,8 @@ services:
       - "6060:6060"
   envoy:
     image: rumblemonkey/primate-envoy:${ENVOY_TAG}
+    depends_on:
+        - primate
     ports:
       - "80:80"
       - "9901:9901"
