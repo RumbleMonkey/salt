@@ -6,6 +6,13 @@ bounce:
         - group: ubuntu
         - mode: 755
 
+container_mounts:
+    file.directory:
+        - name: /home/ubuntu/primate
+        - user: ubuntu
+        - group: ubuntu
+        - makedirs: true
+
 docker_compose_yaml:
     file.managed:
         - name: /home/ubuntu/docker-compose.yml
