@@ -17,7 +17,7 @@ services:
       - "7625:7625"
       - "6060:6060"
   envoy:
-    image: rumblemonkey/coconut-envoy:${ENVOY_TAG}
+    image: rumblemonkey/primate-envoy:${ENVOY_TAG}
     ports:
       - "80:80"
       - "9901:9901"
