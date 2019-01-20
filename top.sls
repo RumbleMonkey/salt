@@ -9,3 +9,7 @@ base:
     "roles:node":
         - match: grain
         - node
+
+    "roles:primate":
+        - match: grain
+        - primate
