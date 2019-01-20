@@ -8,8 +8,6 @@ services:
   primate:
     environment:
       - ENV_PRIMATE=${PRIMATE_ENV}
-    volumes:
-      - ./primate/primate.sqlite3:/home/primate/primate.sqlite3
     image: rumblemonkey/primate:${PRIMATE_TAG}
     links:
       - redis
