@@ -1,10 +1,17 @@
 bounce:
     file.managed:
         - name: /home/ubuntu/bounce.sh
-        - source: salt:///data/bounce/primate.sh
+        - source: salt:///data/primate/bounce.sh
         - user: ubuntu
         - group: ubuntu
         - mode: 755
+
+docker_compose_yaml:
+    file.managed:
+        - name: /home/ubuntu/docker-compose.yml
+        - source: salt:///data/primate/docker-compose.yml
+        - user: ubuntu
+        - group: ubuntu
 
 docker_compose:
     file.managed:
