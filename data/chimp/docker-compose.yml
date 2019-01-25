@@ -1,0 +1,17 @@
+#docker-compose.yml
+version: '3.7'
+services:
+  chimp:
+    environment:
+      - ENV_CHIMP=${CHIMP_ENV}
+    image: rumblemonkey/chimp:${CHIMP_TAG}
+    ports:
+      - "7625:7625"
+      - "6060:6060"
+  envoy:
+    image: rumblemonkey/chimp-envoy:${ENVOY_TAG}
+    depends_on:
+        - chimp
+    ports:
+      - "80:80"
+      - "9901:9901"

@@ -1,0 +1,17 @@
+#docker-compose.yml
+version: '3.7'
+services:
+  broker:
+    environment:
+      - ENV_BROKER=${BROKER_ENV}
+    image: rumblemonkey/broker:${BROKER_TAG}
+    ports:
+      - "7625:7625"
+      - "6060:6060"
+  envoy:
+    image: rumblemonkey/broker-envoy:${ENVOY_TAG}
+    depends_on:
+        - broker
+    ports:
+      - "80:80"
+      - "9901:9901"
