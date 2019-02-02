@@ -21,3 +21,7 @@ base:
     "roles:broker":
         - match: grain
         - broker
+
+    "roles:admin":
+        - match: grain
+        - admin
