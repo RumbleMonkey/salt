@@ -13,11 +13,19 @@ base:
     "roles:primate":
         - match: grain
         - primate
+        - docker_compose
 
     "roles:chimp":
         - match: grain
         - chimp
+        - docker_compose
 
     "roles:broker":
         - match: grain
         - broker
+        - docker_compose
+
+    "roles:admin":
+        - match: grain
+        - admin
+        - docker_compose

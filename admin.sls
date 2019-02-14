@@ -1,14 +1,14 @@
 bounce:
     file.managed:
         - name: /home/ubuntu/bounce.sh
-        - source: salt:///data/broker/bounce.sh
+        - source: salt:///data/admin/bounce.sh
         - user: ubuntu
         - group: ubuntu
         - mode: 755
 
 container_mounts:
     file.directory:
-        - name: /home/ubuntu/broker
+        - name: /home/ubuntu/admin
         - user: ubuntu
         - group: ubuntu
         - makedirs: true
@@ -16,6 +16,6 @@ container_mounts:
 docker_compose_yaml:
     file.managed:
         - name: /home/ubuntu/docker-compose.yml
-        - source: salt:///data/broker/docker-compose.yml
+        - source: salt:///data/admin/docker-compose.yml
         - user: ubuntu
         - group: ubuntu
