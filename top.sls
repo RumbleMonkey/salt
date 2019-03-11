@@ -25,6 +25,11 @@ base:
         - broker
         - docker_compose
 
+    "roles:coconut":
+        - match: grain
+        - coconut
+        - docker_compose
+
     "roles:admin":
         - match: grain
         - admin

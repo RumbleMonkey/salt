@@ -1,0 +1,17 @@
+#docker-compose.yml
+version: '3.7'
+services:
+      react:
+        environment:
+          - ENV_REACT=${REACT_ENV}
+        image: rumblemonkey/coconut-react:${REACT_TAG}
+        ports:
+          - "80:80"
+          - "443:443"
+          - "8080:8080"
+      envoy:
+        image: rumblemonkey/coconut-envoy:${ENVOY_TAG}
+        ports:
+          - "7625:7625"
+          - "9090:9090"
+          - "9901:9901"
