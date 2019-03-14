@@ -3,8 +3,8 @@ version: '3.7'
 services:
       react:
         environment:
-          - ENV_REACT=${REACT_ENV}
-        image: rumblemonkey/coconut-react:${REACT_TAG}
+          - ENV_COCONUT=${COCONUT_ENV}
+        image: rumblemonkey/coconut-react:${COCONUT_TAG}
         ports:
           - "80:80"
           - "443:443"
