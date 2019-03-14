@@ -5,7 +5,7 @@ set -ex
 TAG=$1
 ENV=$2
 ENDPOINT=989485622078.dkr.ecr.us-west-2.amazonaws.com
-COCONUT_REPO=rumblemonkey/coconut
+COCONUT_REPO=rumblemonkey/coconut-react
 
 # secret
 set +x
